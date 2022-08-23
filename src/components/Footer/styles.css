@@ -1,0 +1,19 @@
+.footer__copy {
+  display: block;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+
+  font-size: 0.813rem;
+  color: hsl(250, 8%, 75%);
+}
+
+.footer__copy a {
+  font-size: 0.813rem;
+  color: var(--first-color);
+}
+
+.footer__copy i {
+  position: relative;
+  top: 3px;
+  color: #e73f5d;
+}

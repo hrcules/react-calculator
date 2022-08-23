@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="footer">
       <span className="footer__copy">
         Feito com <i className="ri-heart-fill"></i> por{" "}
-        <a href="https://portfolio-hrcules.vercel.app/">Hércules</a>!
+        <a href="https://portfolio-hrcules.vercel.app/">Hércules</a>!!
       </span>
     </footer>
   );

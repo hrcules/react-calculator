@@ -13,6 +13,7 @@ export function Calculator({ toogleTheme }) {
   const [operator, setOperator] = useState();
   const [result, setResult] = useState(" ");
   const [account, setAccount] = useState("");
+  const [equal_clicked, setEqualClicked] = useState(false);
 
   const handleClick = (e) => {
     var input = e.target.value;
@@ -29,11 +30,13 @@ export function Calculator({ toogleTheme }) {
     setNum(0);
     setResult("");
     setAccount();
+    setEqualClicked(false);
   };
 
   const handleBackspaceInput = () => {
+    if (equal_clicked) return handleClearInput();
     setNum(num.slice(0, num.length - 1));
-    setResult(String(num.slice(0, num.length - 1)));
+    setResult(String(result.substring(0, result.length - 1)));
   };
 
   const handleOperator = (e) => {
@@ -45,8 +48,8 @@ export function Calculator({ toogleTheme }) {
   };
 
   const calculate = () => {
+    if (!oldNum || !num) return;
     setAccount(result);
-    console.log(account);
 
     if (operator === "+") {
       setResult(String(parseInt(oldNum) + parseInt(num)));
@@ -57,6 +60,8 @@ export function Calculator({ toogleTheme }) {
     } else if (operator === "/") {
       setResult(String(parseInt(oldNum) / parseInt(num)));
     }
+
+    setEqualClicked(true);
   };
 
   return (
